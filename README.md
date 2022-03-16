@@ -53,13 +53,32 @@ So, the idea is forbid the constructions of SubObjects from Objects that predica
   Object->Maybe<Object> conditional on p
   
   safe_g
-  g(Mabybe<Object>) -> Maybe<SubObject>
+  Mabybe<Object> -> Maybe<SubObject>
   
   safe_f
-  f(Maybe<SubOjbect>).> Maybe<Object>
+  Maybe<SubOjbect> -> Maybe<Object>
  
   
-Furthermore, we can bu  
+the tests are
+  
+  bool(safe_p(o))==p(o)  for all o in Object
+  
+ (fill this part)...
+  
+  
+  
+ Maybe_error
+  
+ This is an alternative to a SubObject in a way, the idea is the same: it tells you if a predicate succeeds on a given Object, if it does it returns the Object, otherwise it returns none. The difference with the classical Maybe is that it also provides a written explantaion of what actually fails. So it is a facility for error tracking and analysis. 
+  
+  As the Maybe_error will compose, this element can be thought as an alternative to the exception handling mechanism, here we provide the building block to build an error handling mechanism that would never through exceptions or undefined behavior. 
+  
+Logicwise Maybe_error is sticky, once there is an error it will propagate to the users of this Object, so this part is more or less clear. 
+ What is more confusing or difficult is how the information of the error propagates through the code. 
+ 
+
+  
+  
   
 
 
