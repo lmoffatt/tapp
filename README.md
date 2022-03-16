@@ -30,7 +30,37 @@ Lets think of a first case: the subObject.
 
 SubObject
 
-the idea of a subobject is a subset of a Type that complies with a given proposition, that is that its defining predicate applied to the subobject variable always return true. 
+the idea of a subobject is a subset of a Type that complies with a given proposition, that is that its defining predicate applied to the object representation of the subobject always return true. In principle it would be thought as a subclass, but it might also cover the definition of functions. 
+
+
+The suboject can be thought of an embedding in the Object, so there should bean inyection function that returns an Object taking a subObject as input. 
+Conversely, there should be an predicate function that indicates for variables of type Object if they have a SubObject representation (that is congruent to the defining predicate function of the subObject) and a third function that returns a Maybe<SubObject> type taking an Object as input and a forth sg that takes a Maybe<SubObject> and returns a  Maybe<Object> 
+  
+  
+One possibility is to provide also an unsafe function that takes an Object (which is warrantied to fullfil the predicate) and returns a SubObject with undefined behavior in case that an Object which predicates false is given. 
+  
+So we have and unsafe function g Object->SubObject,  a predicate p Object->boolean that warranties that a SubObject can be safely constructed and an always safe function f SubObject->Object. 
+
+For all s in SubObject
+g(f(s)) == s
+  
+for all o in Object where p(0)
+f(g(o))==o
+
+So, the idea is forbid the constructions of SubObjects from Objects that predicate false. One way to do that is to use the template class Maybe_error in the following way
+  
+   safe_p: 
+  Object->Maybe<Object> conditional on p
+  
+  safe_g
+  g(Mabybe<Object>) -> Maybe<SubObject>
+  
+  safe_f
+  f(Maybe<SubOjbect>).> Maybe<Object>
+ 
+  
+Furthermore, we can bu  
+  
 
 
 
