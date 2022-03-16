@@ -76,6 +76,17 @@ the tests are
 Logicwise Maybe_error is sticky, once there is an error it will propagate to the users of this Object, so this part is more or less clear. 
  What is more confusing or difficult is how the information of the error propagates through the code. 
  
+ In principle, the error arises because a predicate on a number of inputs returns false. 
+ 
+  So, we would have a printable name of the predicate function and the value of its input arguments. 
+  
+  When a function is fed with a Maybe_error value that predicates false, we can add the name of the function with its arguments and the argument(s) that fail with the failure message. In this case we only provide the type of the arguments since the other values are irrelevant. 
+  
+  That means that we need an unique printable name for each function and type. 
+  
+  
+  
+  
 
   
   
