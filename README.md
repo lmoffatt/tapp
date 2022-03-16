@@ -16,7 +16,35 @@ Two things comes to mind.
 1. A way to define what a type is really about: a way to write enforzable contracts. That is very important for code comprehension. 
 2. A way to automatically define tests, right in the definition of the clases. 
 
+Another advantage of TaPP is that Types should be independent pieces of code that can be used and tested independently. 
+
+So, TaPP should be able to mix with regular code without problem. We should be able to start TaPPize the code progressively, that is a good requirement, TaPPize what is necessary. 
+
 So, lets fix our objectives on those two achievable ones. 
+
+1. Provide several mechanisms for definining the contracts that define a given Type. 
+2. Provide several mechanisms for building tests to assertain the compliance of those contracts. 
+
+
+Lets think of a first case: the subObject. 
+
+SubObject
+
+the idea of a subobject is a subset of a Type that complies with a given proposition, that is that its defining predicate applied to the subobject variable always return true. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
