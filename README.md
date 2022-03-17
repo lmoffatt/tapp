@@ -85,6 +85,23 @@ Logicwise Maybe_error is sticky, once there is an error it will propagate to the
   That means that we need an unique printable name for each function and type. 
   
   
+A framework to build and turn on and off automatic tests based on the definitions of pre and post conditions and how this blends with the TaPP framework. 
+  
+  what we need
+  1. A procedure to define pre and post conditions and to recover them at will. 
+  
+  2. A trojan-decorator class that allows to inject a table with the contracts for each function we want to test. 
+  
+  2. A functor that given a function, its pre and post conditions it can build the function that checks those and store the results in a Maybe_error class
+  
+  1. How to define pre and post conditions...
+  
+  preconditions is just a Predicate over the input and postconditions a Predicate over the input and output. 
+  
+  So we need a class template for Predicates. It should have two versions: one constexpr without memebers and one that stores a function pointer. 
+  
+  
+  
   
   
 
