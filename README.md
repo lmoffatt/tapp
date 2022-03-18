@@ -100,8 +100,21 @@ A framework to build and turn on and off automatic tests based on the definition
   
   So we need a class template for Predicates. It should have two versions: one constexpr without memebers and one that stores a function pointer. 
   
+  We also need a class template for preconditions and postconditions. 
+  
+  2. Which information should the decorator carry? 
+  it should return the precondition predicate if any and the postcondition predicate if any. 
   
   
+  
+  -----
+  
+  A strong realization: NO FREE LUNCH: there is no way to use the trojan-decorator class without re-implementing all the functions. 
+  
+  So, all functions have to be reimplemented. 
+  
+  
+ In this case, the advantages of highjacking function overloading for promoting 
   
   
 
