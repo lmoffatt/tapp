@@ -1,8 +1,9 @@
 # tapp
 Type as Proposition Programming. 
 
+Modelling Biological Systems is hard, verifying the validity of the model demands a lot of effort. It is unavoidable to make small mistakes that are hard to find. Using a strongly typed language allows the detection of many of such errors at compilation. Type as Proposition Programming explores the possibility of taking this approach to the extreme: make every biological concept into a type. 
 
-The Curry-Howard correspondance allows to convert mathematical proof to a computer programs. In this experimental library we are interested on the converse, that is to think of computer programs as reasonings on propositions. One of the ideas of this correspondance is that Types are equivalent to propositions and variables are sentinels of the truthness of a given proposition.
+The rationale of tapp is based on the Curry-Howard correspondece, which allows to convert mathematical proof to a computer programs. In this experimental library we are interested on the converse, that is to think of computer programs as reasonings on propositions, specially on propositions that are biological reasonings on biological concepts. One of the ideas of this correspondance is that Types are equivalent to propositions and variables are sentinels of the truthness of a given proposition. For instance, we can propose a type Transition_Probability that models the transition probability of the states of an ion receptor. 
 The idea is the converse, to think of each Type as hidden a proposition on it, and the beauty of this approach consists in extend the regular definition of Types to functions, so the Type of a function is set by the proposition that it complies: its contract (the postconditions). In this framework we think of all the functions that comply with a given post-condition on their output as belonging to the same type. 
 
 So, in other words we lump toghether three fundamental concepts : Types, contracts and Tests. 
